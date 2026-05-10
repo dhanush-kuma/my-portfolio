@@ -7,7 +7,7 @@ export default function Navbar() {
         
         {/* Logo */}
         <div className="text-cyan-400 font-mono font-bold tracking-tighter text-xl">
-          ENGINEER_PORTFOLIO
+          DHANUSH_KUMAR
         </div>
 
         {/* Links */}
