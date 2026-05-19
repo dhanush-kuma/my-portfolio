@@ -72,7 +72,7 @@ export default function Preview (){
 <section className="mb-16">
 <h2 className="font-h2 text-h2 text-on-surface mt-16 mb-6">Addressing Eventual Consistency</h2>
 <p className="font-body text-body text-on-surface-variant mb-10">
-          One of the primary challenges in FinTech is maintaining data integrity while embracing eventual consistency. To solve this, we implemented the <strong>Outbox Pattern</strong>. Instead of updating the database and sending a message as two separate actions, we write the event to a dedicated "outbox" table within the same transaction as the business state change.
+          One of the primary challenges in FinTech is maintaining data integrity while embracing eventual consistency. To solve this, we implemented the <strong>Outbox Pattern</strong>. Instead of updating the database and sending a message as two separate actions, we write the event to a dedicated {"outbox"} table within the same transaction as the business state change.
         </p>
 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-12">
 <div className="p-8 bg-surface-container-low border border-outline-variant/30 hover:border-primary-fixed-dim/50 transition-colors">
