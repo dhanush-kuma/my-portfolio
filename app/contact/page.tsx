@@ -1,11 +1,17 @@
 export default function Contact () {
     return (
-        <main className="pt-32 pb-24 px-6 md:px-12 max-w-7xl mx-auto">
+        <main className="pt-32 pb-24 px-6 md:px-12 max-w-screen-2xl mx-auto">
+<section className="mb-16">
+<div className="flex items-center gap-4 mb-2">
+<span className="font-code-sm text-code-sm text-secondary uppercase tracking-[0.2em]">System_Logs / Contact</span>
+<div className="h-[1px] flex-grow bg-outline-variant"></div>
+</div>
+<h1 className="font-h1 text-h1 text-primary">Contact Me</h1>
+</section>
 <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
 <section className="lg:col-span-5 flex flex-col gap-10">
 <div className="flex flex-col gap-6">
-<span className="font-label-caps text-label-caps text-secondary uppercase">About me</span>
-<h1 className="font-h1 text-h1 text-primary">System Architect &amp; Creative Engineer.</h1>
+<h1 className="font-h2 text-h2 text-primary">System Architect &amp; Creative Engineer.</h1>
 <p className="font-body text-body text-on-surface-variant">
                         I specialize in building robust distributed systems and highly responsive user interfaces. My philosophy is rooted in the "Code as Art" principle—where technical precision meets human-centric design. Currently focused on cloud infrastructure and high-performance frontend frameworks.
                     </p>

@@ -21,7 +21,7 @@ export default function Navbar() {
           </span>
 
           <span className="text-cyan-400 font-mono font-bold tracking-tighter text-lg md:text-xl">
-            ENGINEER_PORTFOLIO
+            Dhanush Kumar
           </span>
         </div>
 

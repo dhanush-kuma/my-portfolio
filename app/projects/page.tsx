@@ -1,7 +1,7 @@
 export default function Projects (){
     return (
-        <main className="pt-32 pb-20 px-6 md:px-12 max-w-7xl mx-auto">
-<section className="mb-16">
+        <main className="pt-32 pb-24 px-6 md:px-12 max-w-screen-2xl mx-auto">
+{/* <section className="mb-16">
 <div className="flex items-center gap-2 mb-4">
 <span className="font-code-sm text-primary text-code-sm tracking-tighter">~/work/portfolio</span>
 <div className="h-px flex-grow bg-slate-800"></div>
@@ -10,6 +10,13 @@ export default function Projects (){
 <p className="font-body text-body text-on-surface-variant max-w-2xl">
                 A technical deep-dive into the architectural decisions and system design of my recent software engineering projects.
             </p>
+</section> */}
+<section className="mb-16">
+<div className="flex items-center gap-4 mb-2">
+<span className="font-code-sm text-code-sm text-secondary uppercase tracking-[0.2em]">System_Logs / Portfolio</span>
+<div className="h-[1px] flex-grow bg-outline-variant"></div>
+</div>
+<h1 className="font-h1 text-h1 text-primary">Selected Projects</h1>
 </section>
 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
 <div className="lg:col-span-2 group relative bg-surface-container border border-slate-800 hover:border-primary-fixed-dim/50 transition-all duration-500 overflow-hidden">

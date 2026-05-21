@@ -1,15 +1,22 @@
 export default function Blogs(){
     return(
 
-<main className="pt-24 pb-20 px-6 md:px-12 max-w-screen-2xl mx-auto">
-<header className="mb-12">
+<main className="pt-32 pb-24 px-6 md:px-12 max-w-screen-2xl mx-auto">
+{/* <header className="mb-12">
 <div className="flex items-center gap-2 font-code-sm text-code-sm text-on-surface-variant mb-4">
 <span className="text-secondary">SYSTEM_LOGS</span>
 <span className="">/</span>
 <span className="text-primary-fixed-dim">ARTICLES</span>
 </div>
 <h1 className="font-h1 text-h1 text-primary tracking-tighter max-w-3xl">Technical insights for the modern stack.</h1>
-</header>
+</header> */}
+<section className="mb-16">
+<div className="flex items-center gap-4 mb-2">
+<span className="font-code-sm text-code-sm text-secondary uppercase tracking-[0.2em]">System_Logs / ARTICLES</span>
+<div className="h-[1px] flex-grow bg-outline-variant"></div>
+</div>
+<h1 className="font-h1 text-h1 text-primary">Technical insights for the modern stack.</h1>
+</section>
 <section className="mb-20">
 <div className="relative group grid grid-cols-1 lg:grid-cols-12 gap-8 items-center p-px bg-slate-800 hover:bg-cyan-500/50 transition-colors duration-500 rounded-lg overflow-hidden">
 <div className="lg:col-span-7 aspect-video relative overflow-hidden bg-surface-container rounded-sm">
