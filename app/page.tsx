@@ -1,4 +1,6 @@
 import DotGrid from "@/components/DotGrid";
+import Link from "next/link";
+import { profile, terminalMetrics, coreExpertise, otherExpertise } from "@/lib/data";
 
 export default function Home() {
   return (
@@ -23,51 +25,48 @@ export default function Home() {
             <div className="inline-flex items-center gap-3 px-3 py-1 rounded-full border border-outline-variant bg-surface-container-low mb-8">
               <span className="flex h-2 w-2 rounded-full bg-secondary animate-pulse"></span>
               <span className="font-code-sm text-on-surface-variant uppercase tracking-widest">
-                Available for Architecture Audits
+                {profile.availabilityStatus}
               </span>
             </div>
             <h1 className="font-h1 text-h1 text-on-surface mb-6 leading-none">
               <span className="text-primary-fixed-dim block font-mono tracking-tighter glow-cyan-400">
-                SYSTEM_ARCHITECT
+                {profile.role}
               </span>
               <span className="text-on-surface/80 block mt-2">
-                Scalable Infrastructure. High Precision.
+                {profile.roleSubtitle}
               </span>
             </h1>
             <p className="font-body text-body text-on-surface-variant mb-10 leading-relaxed">
-              I specialize in building distributed systems that handle millions
-              of requests with sub-millisecond latency. My approach combines
-              rigorous engineering discipline with a developer-first philosophy
-              to create robust, maintainable backend environments.
+              {profile.bio}
             </p>
             <div className="flex flex-wrap gap-4">
-              <button className="px-8 py-4 bg-primary text-on-primary font-code-md rounded-lg flex items-center gap-3 hover:shadow-[0_0_20px_rgba(0,219,233,0.3)] transition-all active:scale-95">
-                View Projects
-                <span
-                  className="material-symbols-outlined"
-                  data-icon="arrow_forward"
-                >
-                  arrow_forward
-                </span>
-              </button>
-              <button className="px-8 py-4 border border-outline text-on-surface font-code-md rounded-lg hover:border-primary-fixed-dim hover:text-primary-fixed-dim transition-all active:scale-95">
-                Contact Me
-              </button>
+              <Link href="/projects">
+                <button className="px-8 py-4 bg-primary text-on-primary font-code-md rounded-lg flex items-center gap-3 hover:shadow-[0_0_20px_rgba(0,219,233,0.3)] transition-all active:scale-95 cursor-pointer">
+                  View Projects
+                  <span
+                    className="material-symbols-outlined"
+                    data-icon="arrow_forward"
+                  >
+                    arrow_forward
+                  </span>
+                </button>
+              </Link>
+              <Link href="/contact">
+                <button className="px-8 py-4 border border-outline text-on-surface font-code-md rounded-lg hover:border-primary-fixed-dim hover:text-primary-fixed-dim transition-all active:scale-95 cursor-pointer">
+                  Contact Me
+                </button>
+              </Link>
             </div>
             <div className="mt-16 flex items-center gap-8 grayscale opacity-50 overflow-hidden">
               <span className="font-code-sm text-on-surface-variant whitespace-nowrap uppercase tracking-widest">
                 Trusted By Engineering Teams at
               </span>
               <div className="flex gap-12 items-center">
-                <span className="font-h3 text-on-surface-variant font-bold tracking-tighter">
-                  NEXUS_CORE
-                </span>
-                <span className="font-h3 text-on-surface-variant font-bold tracking-tighter">
-                  GRID_SYSTEMS
-                </span>
-                <span className="font-h3 text-on-surface-variant font-bold tracking-tighter">
-                  SYNC_LABS
-                </span>
+                {profile.trustedBy.map((company, index) => (
+                  <span key={index} className="font-h3 text-on-surface-variant font-bold tracking-tighter">
+                    {company}
+                  </span>
+                ))}
               </div>
             </div>
           </div>
@@ -82,7 +81,7 @@ export default function Home() {
                     <div className="w-2.5 h-2.5 rounded-full bg-green-500/40"></div>
                   </div>
                   <span className="text-[10px] font-mono text-on-surface-variant opacity-60 ml-2">
-                    ssh developer@arch-v4.remote
+                    {terminalMetrics.sshTarget}
                   </span>
                 </div>
                 <div className="p-6 font-mono text-sm space-y-3">
@@ -101,22 +100,22 @@ export default function Home() {
                   </div>
                   <div className="grid grid-cols-2 gap-4 text-[11px] py-2 border-y border-outline-variant/20">
                     <div className="text-on-surface-variant">
-                      Uptime: <span className="text-secondary">99.998%</span>
+                      Uptime: <span className="text-secondary">{terminalMetrics.uptime}</span>
                     </div>
                     <div className="text-on-surface-variant">
-                      Latency: <span className="text-secondary">12ms</span>
+                      Latency: <span className="text-secondary">{terminalMetrics.latency}</span>
                     </div>
                     <div className="text-on-surface-variant">
-                      Nodes: <span className="text-secondary">124 Active</span>
+                      Nodes: <span className="text-secondary">{terminalMetrics.nodes}</span>
                     </div>
                     <div className="text-on-surface-variant">
-                      Errors: <span className="text-green-400">0</span>
+                      Errors: <span className={typeof terminalMetrics.errors === 'number' || terminalMetrics.errors === '0' ? "text-green-400" : "text-red-400"}>{terminalMetrics.errors}</span>
                     </div>
                   </div>
                   <div className="text-secondary opacity-80">
                     ➜ <span className="text-primary ml-2">~</span>{" "}
                     <span className="text-on-surface terminal-cursor">
-                      initializing_architecture
+                      {terminalMetrics.cursorCommand}
                     </span>
                   </div>
                 </div>
@@ -136,58 +135,38 @@ export default function Home() {
               Core Expertise
             </span>
             <h3 className="font-h3 text-h3 text-on-surface mb-4">
-              Distributed Systems
+              {coreExpertise.title}
             </h3>
             <p className="text-on-surface-variant mb-6">
-              Building resilient infrastructures using Kubernetes, Terraform,
-              and Go for global scale.
+              {coreExpertise.description}
             </p>
             <div className="flex flex-wrap gap-2">
-              <span className="px-3 py-1 bg-surface-container-highest text-primary-fixed-dim font-code-sm rounded">
-                Kubernetes
-              </span>
-              <span className="px-3 py-1 bg-surface-container-highest text-primary-fixed-dim font-code-sm rounded">
-                Terraform
-              </span>
-              <span className="px-3 py-1 bg-surface-container-highest text-primary-fixed-dim font-code-sm rounded">
-                Go
-              </span>
+              {coreExpertise.skills?.map((skill, index) => (
+                <span key={index} className="px-3 py-1 bg-surface-container-highest text-primary-fixed-dim font-code-sm rounded">
+                  {skill}
+                </span>
+              ))}
             </div>
           </div>
 
-          <div className="bg-surface-container p-8 rounded-xl border border-outline-variant hover:border-primary-fixed-dim transition-all group">
-            <div className="h-12 w-12 bg-secondary/10 flex items-center justify-center rounded-lg mb-6">
-              <span
-                className="material-symbols-outlined text-secondary"
-                data-icon="database"
-              >
-                database
-              </span>
+          {otherExpertise.map((item, index) => (
+            <div key={index} className="bg-surface-container p-8 rounded-xl border border-outline-variant hover:border-primary-fixed-dim transition-all group">
+              <div className={`h-12 w-12 ${index % 2 === 0 ? 'bg-secondary/10' : 'bg-primary/10'} flex items-center justify-center rounded-lg mb-6`}>
+                <span
+                  className={`material-symbols-outlined ${index % 2 === 0 ? 'text-secondary' : 'text-primary'}`}
+                  data-icon={item.icon}
+                >
+                  {item.icon}
+                </span>
+              </div>
+              <h3 className="font-h3 text-lg text-on-surface mb-2">
+                {item.title}
+              </h3>
+              <p className="text-on-surface-variant text-sm">
+                {item.description}
+              </p>
             </div>
-            <h3 className="font-h3 text-lg text-on-surface mb-2">
-              Data Architecture
-            </h3>
-            <p className="text-on-surface-variant text-sm">
-              Optimizing PostgreSQL and Redis at PB scale.
-            </p>
-          </div>
-
-          <div className="bg-surface-container p-8 rounded-xl border border-outline-variant hover:border-primary-fixed-dim transition-all group">
-            <div className="h-12 w-12 bg-primary/10 flex items-center justify-center rounded-lg mb-6">
-              <span
-                className="material-symbols-outlined text-primary"
-                data-icon="security"
-              >
-                security
-              </span>
-            </div>
-            <h3 className="font-h3 text-lg text-on-surface mb-2">
-              Security First
-            </h3>
-            <p className="text-on-surface-variant text-sm">
-              Implementing Zero Trust and IAM best practices.
-            </p>
-          </div>
+          ))}
         </div>
       </section>
     </main>

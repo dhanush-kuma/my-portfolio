@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
+import { profile } from "@/lib/data";
 
 export default function Navbar() {
 
@@ -21,7 +22,7 @@ export default function Navbar() {
           </span>
 
           <span className="text-cyan-400 font-mono font-bold tracking-tighter text-lg md:text-xl">
-            Dhanush Kumar
+            {profile.name}
           </span>
         </div>
 
@@ -39,7 +40,7 @@ export default function Navbar() {
             Home
           </Link>
 
-          <Link
+          {/* <Link
             href="/blogs"
             className={`${
                 pathname === "/blogs"
@@ -48,7 +49,7 @@ export default function Navbar() {
               } transition-colors`}
           >
             Blogs
-          </Link>
+          </Link> */}
 
           <Link
             href="/projects"
@@ -89,9 +90,11 @@ export default function Navbar() {
         <div className="flex items-center gap-4">
 
           {/* Resume Button */}
-          <button className="hidden sm:block bg-cyan-300 text-black px-6 py-2 font-mono uppercase tracking-widest text-xs hover:bg-cyan-400 transition-all active:scale-95 cursor-pointer">
-            Resume
-          </button>
+          <a href={profile.resumeUrl} download>
+            <button className="hidden sm:block bg-cyan-300 text-black px-6 py-2 font-mono uppercase tracking-widest text-xs hover:bg-cyan-400 transition-all active:scale-95 cursor-pointer">
+              Resume
+            </button>
+          </a>
 
           {/* Mobile Toggle */}
           <button
@@ -124,7 +127,7 @@ export default function Navbar() {
           Home
         </Link>
 
-        <Link
+        {/* <Link
           href="/blogs"
             className={`${
                 pathname === "/blogs"
@@ -133,7 +136,7 @@ export default function Navbar() {
               } transition-colors`}
         >
           Blogs
-        </Link>
+        </Link> */}
 
         <Link
           href="/projects"
@@ -169,9 +172,11 @@ export default function Navbar() {
         </Link>
 
         <div className="px-6 py-4">
-          <button className="w-full bg-cyan-300 text-black py-3 font-mono uppercase tracking-widest text-xs hover:bg-cyan-400 transition-all active:scale-95 cursor-pointer">
-            Resume
-          </button>
+          <a href={profile.resumeUrl} download className="block w-full">
+            <button className="w-full bg-cyan-300 text-black py-3 font-mono uppercase tracking-widest text-xs hover:bg-cyan-400 transition-all active:scale-95 cursor-pointer">
+              Resume
+            </button>
+          </a>
         </div>
 
       </div>
