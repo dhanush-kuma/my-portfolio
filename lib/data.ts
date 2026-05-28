@@ -10,6 +10,8 @@ export interface Profile {
   resumeUrl: string;
   trustedBy: string[];
   systemHealth: string;
+  email: string;
+  linkedinMessageUrl: string;
 }
 
 export interface TerminalMetrics {
@@ -92,9 +94,11 @@ export const profile: Profile = {
   location: "Berlin, DE",
   focusAreas: ["Microservices", "UI/UX"],
   statusMessage: "Available for hire",
-  resumeUrl: "#",
+  resumeUrl: "https://example.com/dhanush-resume.pdf",
   trustedBy: ["NEXUS_CORE", "GRID_SYSTEMS", "SYNC_LABS"],
   systemHealth: "System_Health: 99.9%_UPTIME",
+  email: "dhanush64b@gmail.com",
+  linkedinMessageUrl: "https://linkedin.com/in/dhanush-kumar/message",
 };
 
 export const terminalMetrics: TerminalMetrics = {
@@ -274,7 +278,7 @@ export const blogs: BlogPost[] = [
 ];
 
 export const socials: SocialLink[] = [
-  { name: "Github", icon: "terminal", url: "#" },
-  { name: "LinkedIn", icon: "groups", url: "#" },
-  { name: "Twitter", icon: "share", url: "#" },
+  { name: "Github", icon: "terminal", url: "https://github.com/dhanush-kuma" },
+  { name: "LinkedIn", icon: "groups", url: "https://linkedin.com/in/dhanush-kumar" },
+  { name: "Leetcode", icon: "code", url: "https://leetcode.com/u/dhanush-kuma" },
 ];

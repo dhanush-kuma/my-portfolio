@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { socials, profile } from "@/lib/data";
 
 export default function Footer() {
   return (
@@ -6,30 +6,29 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-6">
         
         <div className="text-slate-500 font-mono text-[10px] tracking-tight uppercase">
-          © 2024 SYSTEM_ARCHITECT. ALL_RIGHTS_RESERVED.
+          © {new Date().getFullYear()} {profile.role}. ALL_RIGHTS_RESERVED.
         </div>
 
-        <div className="flex gap-8">
-          <Link
-            className="text-slate-500 font-mono text-[10px] tracking-tight uppercase hover:text-cyan-400 transition-all hover:-translate-y-[2px]"
-            href="/"
-          >
-            Github
-          </Link>
+        <div className="flex flex-wrap gap-8 justify-center">
+          {socials.map((social, index) => (
+            <a
+              key={index}
+              className="text-slate-500 font-mono text-[10px] tracking-tight uppercase hover:text-cyan-400 transition-all hover:-translate-y-[2px]"
+              href={social.url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {social.name}
+            </a>
+          ))}
 
-          <Link
+          <a
             className="text-slate-500 font-mono text-[10px] tracking-tight uppercase hover:text-cyan-400 transition-all hover:-translate-y-[2px]"
-            href="/"
+            href={profile.resumeUrl}
+            download
           >
-            LinkedIn
-          </Link>
-
-          <Link
-            className="text-slate-500 font-mono text-[10px] tracking-tight uppercase hover:text-cyan-400 transition-all hover:-translate-y-[2px]"
-            href="/"
-          >
-            Twitter
-          </Link>
+            Resume
+          </a>
         </div>
 
         <div className="text-cyan-400 font-mono text-[10px] tracking-tight uppercase">

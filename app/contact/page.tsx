@@ -14,6 +14,7 @@ export default function Contact() {
       </section>
       
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
+        {/* Left Column - Intro and Terminal Bio */}
         <section className="lg:col-span-5 flex flex-col gap-10">
           <div className="flex flex-col gap-6">
             <h1 className="font-h2 text-h2 text-primary">
@@ -63,93 +64,93 @@ export default function Contact() {
               <p className="syntax-comment mt-4">// Looking for a technical lead role</p>
             </div>
           </div>
-          
-          {/* Social Links */}
-          <div className="flex flex-col gap-4">
-            <span className="font-label-caps text-label-caps text-outline uppercase">
-              Connect with me
-            </span>
-            <div className="flex gap-6">
-              {socials.map((social, index) => (
-                <a
-                  key={index}
-                  className="group flex items-center gap-2 text-on-surface-variant hover:text-secondary transition-colors"
-                  href={social.url}
-                >
-                  <span
-                    className="material-symbols-outlined text-[20px]"
-                    data-icon={social.icon}
-                  >
-                    {social.icon}
-                  </span>
-                  <span className="font-mono text-xs uppercase tracking-tighter">
-                    {social.name}
-                  </span>
-                </a>
-              ))}
-            </div>
-          </div>
         </section>
         
-        {/* Contact Form Section */}
+        {/* Right Column - Transmission & Social Card */}
         <section className="lg:col-span-7">
           <div className="bg-surface-container-high border border-outline-variant p-8 md:p-12 rounded-xl relative overflow-hidden">
             <div className="absolute -right-24 -top-24 w-64 h-64 bg-primary-fixed/5 blur-3xl rounded-full"></div>
+            
             <div className="relative z-10">
               <div className="mb-10">
-                <h2 className="font-h2 text-h2 text-primary mb-2">
-                  Initiate Transmission
-                </h2>
+                <div className="flex items-center gap-3 mb-2">
+                  <span className="material-symbols-outlined text-primary text-[24px]">terminal</span>
+                  <h2 className="font-h2 text-h2 text-primary">Initiate Transmission</h2>
+                </div>
                 <p className="font-body text-body text-on-surface-variant">
-                  Have a project in mind or just want to say hi? My inbox is
-                  always open.
+                  Select a communication protocol to direct messages to the system. Direct email is preferred, or you can send an encrypted transmission on LinkedIn.
                 </p>
               </div>
-              <form className="space-y-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <div className="group flex flex-col gap-2">
-                    <label className="font-label-caps text-[10px] text-outline uppercase tracking-[0.2em] group-focus-within:text-cyan-400 transition-colors">
-                      Name
-                    </label>
-                    <input
-                      className="bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-cyan-400 font-mono text-sm py-2 placeholder:text-surface-variant transition-all"
-                      placeholder="ALAN TURING"
-                      type="text"
-                    />
+
+              {/* Communication Protocols List */}
+              <div className="space-y-6">
+                
+                {/* Email Protocol */}
+                <div className="bg-surface-container border border-outline-variant p-6 rounded-lg group hover:border-primary transition-all duration-300">
+                  <div className="flex items-center justify-between flex-wrap gap-4">
+                    <div className="flex items-center gap-4">
+                      <div className="h-12 w-12 bg-primary/10 flex items-center justify-center rounded-lg text-primary">
+                        <span className="material-symbols-outlined">mail</span>
+                      </div>
+                      <div>
+                        <span className="font-code-sm text-[10px] text-secondary uppercase tracking-widest block mb-0.5">PROTOCOL: SMTP_DIRECT</span>
+                        <a href={`mailto:${profile.email}`} className="font-mono text-sm text-on-surface hover:text-primary transition-colors hover:underline break-all">
+                          {profile.email}
+                        </a>
+                      </div>
+                    </div>
+                    <a href={`mailto:${profile.email}`} className="bg-primary-fixed text-on-primary-fixed px-6 py-2.5 font-mono font-bold uppercase tracking-widest text-[10px] hover:glow-cyan-400 active:scale-95 transition-all flex items-center gap-2 cursor-pointer">
+                      <span>OPEN_MAIL</span>
+                      <span className="material-symbols-outlined text-xs">arrow_forward</span>
+                    </a>
                   </div>
-                  <div className="group flex flex-col gap-2">
-                    <label className="font-label-caps text-[10px] text-outline uppercase tracking-[0.2em] group-focus-within:text-cyan-400 transition-colors">
-                      Email Address
-                    </label>
-                    <input
-                      className="bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-cyan-400 font-mono text-sm py-2 placeholder:text-surface-variant transition-all"
-                      placeholder="ALAN@ENIGMA.TECH"
-                      type="email"
-                    />
+                </div>
+
+                {/* LinkedIn Protocol */}
+                <div className="bg-surface-container border border-outline-variant p-6 rounded-lg group hover:border-secondary transition-all duration-300">
+                  <div className="flex items-center justify-between flex-wrap gap-4">
+                    <div className="flex items-center gap-4">
+                      <div className="h-12 w-12 bg-secondary/10 flex items-center justify-center rounded-lg text-secondary">
+                        <span className="material-symbols-outlined">chat</span>
+                      </div>
+                      <div>
+                        <span className="font-code-sm text-[10px] text-secondary uppercase tracking-widest block mb-0.5">PROTOCOL: LINKEDIN_SECURE</span>
+                        <span className="font-mono text-sm text-on-surface">
+                          Message me on LinkedIn
+                        </span>
+                      </div>
+                    </div>
+                    <a href={profile.linkedinMessageUrl} target="_blank" rel="noopener noreferrer" className="border border-secondary text-secondary px-6 py-2.5 font-mono font-bold uppercase tracking-widest text-[10px] hover:bg-secondary/10 active:scale-95 transition-all flex items-center gap-2 cursor-pointer">
+                      <span>SEND_MSG</span>
+                      <span className="material-symbols-outlined text-xs">open_in_new</span>
+                    </a>
                   </div>
                 </div>
-                <div className="group flex flex-col gap-2">
-                  <label className="font-label-caps text-[10px] text-outline uppercase tracking-[0.2em] group-focus-within:text-cyan-400 transition-colors">
-                    Message
-                  </label>
-                  <textarea
-                    className="bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-cyan-400 font-mono text-sm py-2 placeholder:text-surface-variant transition-all resize-none"
-                    placeholder="DESCRIBE YOUR VISION OR PROJECT REQUIREMENTS..."
-                    rows={4}
-                  ></textarea>
+
+                {/* Social Grid (Connect with me) */}
+                <div className="pt-8 border-t border-outline-variant/30">
+                  <span className="font-label-caps text-[10px] text-outline uppercase tracking-[0.2em] block mb-4">Connect with me</span>
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    {socials.map((social, index) => (
+                      <a
+                        key={index}
+                        href={social.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group flex items-center gap-3 p-4 bg-surface-container border border-outline-variant rounded-lg hover:border-primary-fixed-dim hover:bg-surface-container-high transition-all"
+                      >
+                        <span className="material-symbols-outlined text-primary text-[20px] transition-transform group-hover:scale-110">
+                          {social.icon}
+                        </span>
+                        <div className="font-mono text-xs uppercase tracking-tighter text-on-surface-variant group-hover:text-primary transition-colors">
+                          {social.name}
+                        </div>
+                      </a>
+                    ))}
+                  </div>
                 </div>
-                <div className="pt-4">
-                  <button
-                    className="w-full md:w-auto bg-primary-fixed text-on-primary-fixed px-10 py-4 font-mono font-bold uppercase tracking-widest text-xs hover:glow-cyan-400 transition-all duration-300 active:scale-95 flex items-center justify-center gap-3"
-                    type="submit"
-                  >
-                    <span>Send Message</span>
-                    <span className="material-symbols-outlined text-sm" data-icon="send">
-                      send
-                    </span>
-                  </button>
-                </div>
-              </form>
+
+              </div>
             </div>
           </div>
           
