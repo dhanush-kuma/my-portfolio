@@ -4,6 +4,7 @@ import Footer from "../components/footer"
 import "./globals.css";
 import { Geist } from "next/font/google";
 import { cn } from "@/lib/utils";
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
@@ -38,6 +39,7 @@ export default function RootLayout({
         {children}
         <Footer />
       </body>
+      <GoogleAnalytics gaId="G-Z1ZNW1ZNX9" />
     </html>
   );
 }
