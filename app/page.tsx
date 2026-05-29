@@ -73,7 +73,7 @@ export default function Home() {
 
           <div className="lg:col-span-5 relative hidden lg:block">
             <div className="relative rounded-xl border border-outline-variant bg-surface-container-highest p-1 overflow-hidden shadow-2xl">
-              <div className="bg-surface-container-lowest rounded-lg overflow-hidden border border-outline-variant">
+              <div className="bg-surface-container-lowest rounded rounded-b-lg overflow-hidden">
                 <div className="bg-surface-variant px-4 py-2 flex items-center gap-2">
                   <div className="flex gap-1.5">
                     <div className="w-2.5 h-2.5 rounded-full bg-red-500/40"></div>

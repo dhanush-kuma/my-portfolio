@@ -87,18 +87,18 @@ export interface SocialLink {
 
 export const profile: Profile = {
   name: "Dhanush Kumar",
-  role: "SYSTEM_ARCHITECT",
+  role: "Backend Engineer",
   roleSubtitle: "Scalable Infrastructure. High Precision.",
-  availabilityStatus: "Available for Architecture Audits",
-  bio: "I specialize in building distributed systems that handle millions of requests with sub-millisecond latency. My approach combines rigorous engineering discipline with a developer-first philosophy to create robust, maintainable backend environments.",
-  location: "Berlin, DE",
-  focusAreas: ["Microservices", "UI/UX"],
-  statusMessage: "Available for hire",
+  availabilityStatus: "Available for Hire",
+  bio: "I build reliable web applications and backend services with a focus on performance and developer experience. Experienced with building scalable systems, APIs, and databases; familiar with distributed systems patterns.",
+  location: "Kochi, Kerala",
+  focusAreas: ["Cloud", "Microservices", "UI/UX"],
+  statusMessage: "Available for Hire",
   resumeUrl: "https://example.com/dhanush-resume.pdf",
-  trustedBy: ["NEXUS_CORE", "GRID_SYSTEMS", "SYNC_LABS"],
+  trustedBy: ["Itinges", "MMMR"],
   systemHealth: "System_Health: 99.9%_UPTIME",
   email: "dhanush64b@gmail.com",
-  linkedinMessageUrl: "https://linkedin.com/in/dhanush-kumar/message",
+  linkedinMessageUrl: "https://www.linkedin.com/in/dhanush-kuma/message",
 };
 
 export const terminalMetrics: TerminalMetrics = {
@@ -111,21 +111,24 @@ export const terminalMetrics: TerminalMetrics = {
 };
 
 export const coreExpertise: SkillBox = {
-  title: "Distributed Systems",
-  description: "Building resilient infrastructures using Kubernetes, Terraform, and Go for global scale.",
-  skills: ["Kubernetes", "Terraform", "Go"],
+  title: "Full Stack Development",
+  description:
+    "Building scalable web applications with Next.js, backend systems in PHP, Python, and Go, along with cloud storage and deployment using AWS S3.",
+  skills: ["Next.js", "PHP", "Python", "Go", "AWS S3"],
 };
 
 export const otherExpertise: SkillBox[] = [
   {
-    title: "Data Architecture",
-    description: "Optimizing PostgreSQL and Redis at PB scale.",
+    title: "Backend Engineering",
+    description:
+      "Designing REST APIs, authentication systems, and scalable server-side architectures.",
     icon: "database",
   },
   {
-    title: "Security First",
-    description: "Implementing Zero Trust and IAM best practices.",
-    icon: "security",
+    title: "Cloud & Deployment",
+    description:
+      "Managing cloud storage, deployments, and application infrastructure with AWS services.",
+    icon: "cloud",
   },
 ];
 
@@ -279,6 +282,6 @@ export const blogs: BlogPost[] = [
 
 export const socials: SocialLink[] = [
   { name: "Github", icon: "terminal", url: "https://github.com/dhanush-kuma" },
-  { name: "LinkedIn", icon: "groups", url: "https://linkedin.com/in/dhanush-kumar" },
-  { name: "Leetcode", icon: "code", url: "https://leetcode.com/u/dhanush-kuma" },
+  { name: "LinkedIn", icon: "groups", url: "https://www.linkedin.com/in/dhanush-kuma/" },
+  { name: "Leetcode", icon: "code", url: "https://leetcode.com/u/dkf566/" },
 ];
