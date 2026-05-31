@@ -57,16 +57,62 @@ export default function Home() {
                 </button>
               </Link>
             </div>
-            <div className="mt-16 flex items-center gap-8 grayscale opacity-50 overflow-hidden">
-              <span className="font-code-sm text-on-surface-variant whitespace-nowrap uppercase tracking-widest">
+            <div className="mt-16 flex flex-col md:flex-row md:items-center gap-6 md:gap-8 grayscale opacity-50 overflow-hidden">
+              <style>{`
+                @keyframes marquee {
+                  0% { transform: translateX(0); }
+                  100% { transform: translateX(-50%); }
+                }
+                @media (max-width: 767px) {
+                  .mobile-marquee {
+                    animation: marquee 16s linear infinite;
+                    display: flex;
+                    gap: 3rem;
+                    min-width: max-content;
+                  }
+                  .mobile-marquee-wrapper {
+                    overflow: hidden;
+                    width: 100%;
+                    position: relative;
+                    mask-image: linear-gradient(to right, transparent, white 15%, white 85%, transparent);
+                    -webkit-mask-image: linear-gradient(to right, transparent, white 15%, white 85%, transparent);
+                  }
+                }
+              `}</style>
+
+              {/* Static Label on Desktop - Hidden on Mobile */}
+              <span className="hidden md:block font-code-sm text-on-surface-variant whitespace-nowrap uppercase tracking-widest text-sm">
                 Trusted By Engineering Teams at
               </span>
-              <div className="flex gap-12 items-center">
-                {profile.trustedBy.map((company, index) => (
-                  <span key={index} className="font-h3 text-on-surface-variant font-bold tracking-tighter">
-                    {company}
-                  </span>
-                ))}
+              
+              <div className="mobile-marquee-wrapper w-full flex-grow">
+                <div className="mobile-marquee flex gap-12 items-center justify-center md:justify-start">
+                  
+                  {/* Set 1: Label + Companies */}
+                  <div className="flex gap-12 items-center">
+                    <span className="md:hidden font-code-sm text-on-surface-variant whitespace-nowrap uppercase tracking-widest text-[11px] mr-2">
+                      Trusted By Engineering Teams at:
+                    </span>
+                    {profile.trustedBy.map((company, index) => (
+                      <span key={`s1-${index}`} className="font-h3 text-on-surface-variant font-bold tracking-tighter">
+                        {company}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Set 2: Label + Companies (for seamless mobile looping) */}
+                  <div className="flex gap-12 items-center md:hidden">
+                    <span className="font-code-sm text-on-surface-variant whitespace-nowrap uppercase tracking-widest text-[11px] mr-2">
+                      Trusted By Engineering Teams at:
+                    </span>
+                    {profile.trustedBy.map((company, index) => (
+                      <span key={`s2-${index}`} className="font-h3 text-on-surface-variant font-bold tracking-tighter">
+                        {company}
+                      </span>
+                    ))}
+                  </div>
+
+                </div>
               </div>
             </div>
           </div>
