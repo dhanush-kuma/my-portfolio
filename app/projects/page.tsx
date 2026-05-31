@@ -13,124 +13,60 @@ export default function Projects() {
         <h1 className="font-h1 text-h1 text-primary">Selected Projects</h1>
       </section>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
-        {projects.map((project, index) => {
-          if (project.isFeatured) {
-            return (
-              <div
-                key={index}
-                className="lg:col-span-2 group relative bg-surface-container border border-slate-800 hover:border-primary-fixed-dim/50 transition-all duration-500 overflow-hidden"
-              >
-                <div className="flex flex-col h-full">
-                  {project.image && (
-                    <div className="relative aspect-video overflow-hidden border-b border-slate-800">
-                      <img
-                        className="w-full h-full object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700"
-                        data-alt={project.imageAlt}
-                        src={project.image}
-                      />
-                      <div className="absolute top-4 left-4 bg-slate-950/90 px-3 py-1 border border-primary-fixed-dim/30">
-                        <span className="font-code-sm text-primary text-[11px] tracking-widest uppercase">
-                          {project.featuredLabel || "Featured"}
-                        </span>
-                      </div>
-                    </div>
-                  )}
-                  <div className="p-8 flex flex-col flex-grow">
-                    <div className="font-code-sm text-primary text-code-sm mb-2 opacity-60">
-                      {project.tag}
-                    </div>
-                    <h3 className="font-h2 text-h2 text-on-background mb-4">
-                      {project.title}
-                    </h3>
-                    <p className="font-body text-body text-on-surface-variant mb-6 flex-grow">
-                      {project.description}
-                    </p>
-                    <div className="flex flex-wrap gap-2 mb-8">
-                      {project.tech.map((t, tIdx) => (
-                        <span
-                          key={tIdx}
-                          className="font-code-sm text-code-sm bg-surface-container-highest px-2 py-1 text-on-surface-variant border border-outline-variant"
-                        >
-                          {t}
-                        </span>
-                      ))}
-                    </div>
-                    <div className="flex gap-6 mt-auto">
-                      {project.links.map((link, lIdx) => (
-                        <a
-                          key={lIdx}
-                          className="flex items-center gap-2 text-primary font-code-sm text-code-sm hover:underline"
-                          href={link.url}
-                        >
-                          {link.icon && (
-                            <span className="material-symbols-outlined text-[18px]">
-                              {link.icon}
-                            </span>
-                          )}
-                          {link.label}
-                        </a>
-                      ))}
-                    </div>
-                  </div>
-                </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {projects.map((project, index) => (
+          <div
+            key={index}
+            className="group bg-slate-950/40 border border-slate-800 hover:border-cyan-400 hover:scale-[1.02] transition-all duration-300 flex flex-col rounded-lg overflow-hidden backdrop-blur-sm"
+          >
+            {/* Card Header */}
+            <div className="p-6 border-b border-slate-900">
+              <div className="font-code-sm text-code-sm text-cyan-400 tracking-wider uppercase mb-1.5 opacity-80 font-mono">
+                {project.tag}
               </div>
-            );
-          } else {
-            return (
-              <div
-                key={index}
-                className="group bg-surface-container border border-slate-800 hover:border-primary-fixed-dim/50 transition-all duration-500 flex flex-col"
-              >
-                <div className="p-6 border-b border-slate-800">
-                  <div className="font-code-sm text-primary text-code-sm mb-1 opacity-60">
-                    {project.tag}
-                  </div>
-                  <h3 className="font-h3 text-h3 text-on-background">
-                    {project.title}
-                  </h3>
-                </div>
+              <h3 className="font-h3 text-h3 text-slate-100 group-hover:text-cyan-300 transition-colors duration-300">
+                {project.title}
+              </h3>
+            </div>
 
-                {project.image ? (
-                  <div className="aspect-square bg-slate-900 relative overflow-hidden flex items-center justify-center border-b border-slate-800">
-                    <img
-                      className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
-                      data-alt={project.imageAlt}
-                      src={project.image}
-                    />
-                  </div>
-                ) : null}
+            {/* Card Content */}
+            <div className="p-6 flex flex-col flex-grow">
+              <p className="font-body text-body text-slate-400 mb-6 flex-grow leading-relaxed">
+                {project.description}
+              </p>
 
-                <div className="p-6 flex flex-col flex-grow">
-                  <p className="font-body text-body text-on-surface-variant mb-6 line-clamp-3">
-                    {project.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2 mb-6 mt-auto">
-                    {project.tech.map((t, tIdx) => (
-                      <span
-                        key={tIdx}
-                        className="font-code-sm text-code-sm bg-surface-container-highest px-2 py-1 text-on-surface-variant border border-outline-variant"
-                      >
-                        {t}
-                      </span>
-                    ))}
-                  </div>
-                  <div className="flex justify-between mt-4">
-                    {project.links.map((link, lIdx) => (
-                      <a
-                        key={lIdx}
-                        className="text-primary font-code-sm text-[12px] uppercase tracking-wider hover:glow-cyan-400"
-                        href={link.url}
-                      >
-                        {link.label}
-                      </a>
-                    ))}
-                  </div>
-                </div>
+              {/* Tech Stack Badges */}
+              <div className="flex flex-wrap gap-1.5 mb-6">
+                {project.tech.map((t, tIdx) => (
+                  <span
+                    key={tIdx}
+                    className="font-code-sm text-code-sm bg-slate-900/60 px-2 py-1 text-slate-400 border border-slate-800/80 rounded"
+                  >
+                    {t}
+                  </span>
+                ))}
               </div>
-            );
-          }
-        })}
+
+              {/* Links with adaptive icons */}
+              <div className="flex flex-wrap gap-4 mt-auto pt-4 border-t border-slate-900/80">
+                {project.links.map((link, lIdx) => (
+                  <a
+                    key={lIdx}
+                    className="flex items-center gap-1.5 text-cyan-400 hover:text-cyan-300 font-code-sm text-[12px] uppercase tracking-wider transition-colors duration-300"
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span className="material-symbols-outlined text-[16px]">
+                      {link.icon || (link.label === "VIEW_CODE" || link.label.toLowerCase().includes("github") || link.label.toLowerCase().includes("code") ? "terminal" : "open_in_new")}
+                    </span>
+                    {link.label}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
     </main>
   );

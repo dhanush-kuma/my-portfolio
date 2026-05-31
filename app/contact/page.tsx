@@ -18,14 +18,11 @@ export default function Contact() {
         <section className="lg:col-span-5 flex flex-col gap-10">
           <div className="flex flex-col gap-6">
             <h1 className="font-h2 text-h2 text-primary">
-              System Architect &amp; Creative Engineer.
+              {profile.role} {" "}&amp; Developer.
             </h1>
             <p className="font-body text-body text-on-surface-variant">
-              I specialize in building robust distributed systems and highly
-              responsive user interfaces. My philosophy is rooted in the "Code
-              as Art" principle—where technical precision meets human-centric
-              design. Currently focused on cloud infrastructure and
-              high-performance frontend frameworks.
+              {profile.bio} Currently focused on{" "}
+              {profile.focusAreas.slice(0, -1).join(", ")} and {profile.focusAreas.slice(-1)}.
             </p>
           </div>
           
@@ -61,7 +58,7 @@ export default function Contact() {
                 <span className="syntax-string">'{profile.statusMessage}'</span>
               </p>
               <p>{"};"}</p>
-              <p className="syntax-comment mt-4">// Looking for a technical lead role</p>
+              <p className="syntax-comment mt-4">// Looking for a Backend Developer role</p>
             </div>
           </div>
         </section>
@@ -155,13 +152,13 @@ export default function Contact() {
           </div>
           
           {/* Aesthetic Keyboard Image Block */}
-          <div className="mt-8 h-48 w-full rounded-xl overflow-hidden grayscale hover:grayscale-0 transition-all duration-700">
+          {/* <div className="mt-8 h-48 w-full rounded-xl overflow-hidden grayscale hover:grayscale-0 transition-all duration-700">
             <img
               className="w-full h-full object-cover"
               data-alt="A highly detailed close-up of a high-end mechanical keyboard with glowing cyan backlighting in a dimly lit studio. The shot uses a shallow depth of field, focusing on the intricate textures of the keycaps and the subtle brushed aluminum frame. The mood is professional, technical, and serene, perfectly aligning with a dark-mode developer aesthetic using a palette of deep navy and electric blue highlights."
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuAU3SWHND4euJFWvcDEhx9HGbO-SboqZQ5Zet0GaB7rQzrvsLz5Y4-iLbpQv783WQVdJlSO8s6_TZVD6FZANXkMpa5lIBS1ymW4sEIJxh4OLJRU2Ph8IeH5RSvFhQexqlF-DDKkpj8Gs-UaV5AUou9WU-La_ni0tx9Rx6YJfyQhqSsuFUSAt6G8G8zwYPie_w99M8o7w0UTxCk_URiDzV6XmbqLwWywosOJpfkag8COdGK8iyPemjis1xZQ3wQrzx4al4B0R3p85g"
             />
-          </div>
+          </div> */}
         </section>
       </div>
     </main>

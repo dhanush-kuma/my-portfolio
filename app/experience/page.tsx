@@ -71,7 +71,7 @@ export default function Experience() {
               <div className="flex items-center gap-3 mb-6">
                 <span
                   className={`material-symbols-outlined ${
-                    index === 0 ? "text-primary" : index === 1 ? "text-secondary" : "text-on-tertiary-fixed-variant"
+                    index === 0 ? "text-primary" : index === 1 ? "text-secondary" : "text-tertiary-fixed-dim"
                   }`}
                   data-icon={category.icon}
                 >
@@ -79,7 +79,7 @@ export default function Experience() {
                 </span>
                 <h3
                   className={`font-label-caps text-label-caps uppercase ${
-                    index === 0 ? "text-primary" : index === 1 ? "text-secondary" : "text-on-tertiary-fixed-variant"
+                    index === 0 ? "text-primary" : index === 1 ? "text-secondary" : "text-tertiary-fixed-dim"
                   }`}
                 >
                   {category.title}
@@ -99,7 +99,7 @@ export default function Experience() {
           ))}
 
           {/* Uptime Image Block */}
-          <div className="h-48 rounded-xl overflow-hidden relative">
+          {/* <div className="h-48 rounded-xl overflow-hidden relative">
             <img
               className="w-full h-full object-cover grayscale opacity-40 hover:grayscale-0 transition-all duration-700"
               data-alt="A highly detailed close-up of computer circuitry and glowing hardware components inside a professional server rack. The lighting is low-key with intense electric blue highlights that reflect off the metallic surfaces. The aesthetic is industrial, precise, and high-tech, aligning with a sophisticated dark-mode engineering portfolio style. The focus is sharp on a microchip labeled with technical codes."
@@ -111,7 +111,7 @@ export default function Experience() {
                 {profile.systemHealth}
               </span>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </main>

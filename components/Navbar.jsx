@@ -90,7 +90,7 @@ export default function Navbar() {
         <div className="flex items-center gap-4">
 
           {/* Resume Button */}
-          <a href={profile.resumeUrl} download>
+          <a href={profile.resumeUrl} target="_blank" rel="noopener noreferrer">
             <button className="hidden sm:block bg-cyan-300 text-black px-6 py-2 font-mono uppercase tracking-widest text-xs hover:bg-cyan-400 transition-all active:scale-95 cursor-pointer">
               Resume
             </button>
@@ -172,7 +172,7 @@ export default function Navbar() {
         </Link>
 
         <div className="px-6 py-4">
-          <a href={profile.resumeUrl} download className="block w-full">
+          <a href={profile.resumeUrl} target="_blank" rel="noopener noreferrer" className="block w-full">
             <button className="w-full bg-cyan-300 text-black py-3 font-mono uppercase tracking-widest text-xs hover:bg-cyan-400 transition-all active:scale-95 cursor-pointer">
               Resume
             </button>
