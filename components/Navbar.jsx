@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
-import { profile } from "@/lib/data";
+import { profile, socials } from "@/lib/data";
 
 export default function Navbar() {
 
@@ -118,6 +118,7 @@ export default function Navbar() {
 
         <Link
           href="/"
+          onClick={() => setMenuOpen(false)}
             className={`${
                 pathname === "/"
                   ? "block px-6 py-4 border-b border-slate-800 text-cyan-400"
@@ -129,6 +130,7 @@ export default function Navbar() {
 
         {/* <Link
           href="/blogs"
+          onClick={() => setMenuOpen(false)}
             className={`${
                 pathname === "/blogs"
                   ? "block px-6 py-4 border-b border-slate-800 text-cyan-400"
@@ -140,6 +142,7 @@ export default function Navbar() {
 
         <Link
           href="/projects"
+          onClick={() => setMenuOpen(false)}
             className={`${
                 pathname === "/projects"
                   ? "block px-6 py-4 border-b border-slate-800 text-cyan-400"
@@ -151,6 +154,7 @@ export default function Navbar() {
 
         <Link
           href="/experience"
+          onClick={() => setMenuOpen(false)}
             className={`${
                 pathname === "/experience"
                   ? "block px-6 py-4 border-b border-slate-800 text-cyan-400"
@@ -162,6 +166,7 @@ export default function Navbar() {
 
         <Link
           href="/contact"
+          onClick={() => setMenuOpen(false)}
             className={`${
                 pathname === "/contact"
                   ? "block px-6 py-4 border-b border-slate-800 text-cyan-400"
@@ -171,9 +176,20 @@ export default function Navbar() {
           Contact
         </Link>
 
-        <div className="px-6 py-4">
-          <a href={profile.resumeUrl} target="_blank" rel="noopener noreferrer" className="block w-full">
-            <button className="w-full bg-cyan-300 text-black py-3 font-mono uppercase tracking-widest text-xs hover:bg-cyan-400 transition-all active:scale-95 cursor-pointer">
+        <div className="px-6 py-4 flex gap-4">
+          <a 
+            href={socials.find(s => s.name.toLowerCase() === "linkedin")?.url || "https://www.linkedin.com/in/dhanush-kuma/"} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            onClick={() => setMenuOpen(false)} 
+            className="flex-1"
+          >
+            <button className="w-full border border-cyan-300 text-cyan-300 py-3 font-mono tracking-widest text-xs hover:bg-cyan-300/10 transition-all active:scale-95 cursor-pointer">
+              LinkedIn
+            </button>
+          </a>
+          <a href={profile.resumeUrl} target="_blank" rel="noopener noreferrer" onClick={() => setMenuOpen(false)} className="flex-1">
+            <button className="w-full bg-cyan-300 text-black py-3 font-mono tracking-widest text-xs hover:bg-cyan-400 transition-all active:scale-95 cursor-pointer">
               Resume
             </button>
           </a>
