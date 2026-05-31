@@ -17,6 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={cn("dark", "font-sans", geist.variable)}>
       <head>
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap"
           rel="stylesheet"
