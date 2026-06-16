@@ -95,7 +95,7 @@ export const profile: Profile = {
   focusAreas: ["Cloud", "Microservices", "UI/UX"],
   statusMessage: "Available for Hire",
   resumeUrl:
-    "https://drive.google.com/file/d/1eeC5DV_IQbpxsx9JkNMGNqPVs1JkAQte/view",
+    "https://drive.google.com/file/d/1asCL1ga0m2fY5tBfOsQ9efYpqUt0_tyG/view?usp=sharing",
   trustedBy: ["Itinges", "MMMR"],
   systemHealth: "System_Health: 99.9%_UPTIME",
   email: "dhanush64b@gmail.com",
