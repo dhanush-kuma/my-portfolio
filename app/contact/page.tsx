@@ -12,27 +12,30 @@ export default function Contact() {
         </div>
         <h1 className="font-h1 text-h1 text-primary">Contact Me</h1>
       </section>
-      
+
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
         {/* Left Column - Intro and Terminal Bio */}
         <section className="lg:col-span-5 flex flex-col gap-10">
           <div className="flex flex-col gap-6">
             <h1 className="font-h2 text-h2 text-primary">
-              {profile.role} {" "}&amp; Developer.
+              {profile.role} &amp; Developer.
             </h1>
             <p className="font-body text-body text-on-surface-variant">
               {profile.bio} Currently focused on{" "}
-              {profile.focusAreas.slice(0, -1).join(", ")} and {profile.focusAreas.slice(-1)}.
+              {profile.focusAreas.slice(0, -1).join(", ")} and{" "}
+              {profile.focusAreas.slice(-1)}.
             </p>
           </div>
-          
+
           {/* Terminal Mockup Bio Card */}
           <div className="bg-surface-container border border-outline-variant p-6 rounded-lg font-code-sm">
             <div className="flex items-center gap-2 mb-4 border-b border-outline-variant pb-2">
               <div className="w-3 h-3 rounded-full bg-error"></div>
               <div className="w-3 h-3 rounded-full bg-secondary-container"></div>
               <div className="w-3 h-3 rounded-full bg-primary-fixed"></div>
-              <span className="ml-2 text-outline text-[11px] font-mono">bio.tsx</span>
+              <span className="ml-2 text-outline text-[11px] font-mono">
+                bio.tsx
+              </span>
             </div>
             <div className="space-y-1">
               <p>
@@ -58,30 +61,37 @@ export default function Contact() {
                 <span className="syntax-string">'{profile.statusMessage}'</span>
               </p>
               <p>{"};"}</p>
-              <p className="syntax-comment mt-4">// Looking for a Backend Developer role</p>
+              <p className="syntax-comment mt-4">
+                // Looking for a Backend Developer role
+              </p>
             </div>
           </div>
         </section>
-        
+
         {/* Right Column - Transmission & Social Card */}
         <section className="lg:col-span-7">
           <div className="bg-surface-container-high border border-outline-variant p-8 md:p-12 rounded-xl relative overflow-hidden">
             <div className="absolute -right-24 -top-24 w-64 h-64 bg-primary-fixed/5 blur-3xl rounded-full"></div>
-            
+
             <div className="relative z-10">
               <div className="mb-10">
                 <div className="flex items-center gap-3 mb-2">
-                  <span className="material-symbols-outlined text-primary text-[24px]">terminal</span>
-                  <h2 className="font-h2 text-h2 text-primary">Initiate Transmission</h2>
+                  <span className="material-symbols-outlined text-primary text-[24px]">
+                    terminal
+                  </span>
+                  <h2 className="font-h2 text-h2 text-primary">
+                    Say Hello :{")"}
+                  </h2>
                 </div>
                 <p className="font-body text-body text-on-surface-variant">
-                  Select a communication protocol to direct messages to the system. Direct email is preferred, or you can send an encrypted transmission on LinkedIn.
+                  Select a communication protocol to route your message. Direct
+                  email is preferred for faster responses, or you can connect
+                  via LinkedIn.
                 </p>
               </div>
 
               {/* Communication Protocols List */}
               <div className="space-y-6">
-                
                 {/* Email Protocol */}
                 <div className="bg-surface-container border border-outline-variant p-6 rounded-lg group hover:border-primary transition-all duration-300">
                   <div className="flex items-center justify-between flex-wrap gap-4">
@@ -90,15 +100,25 @@ export default function Contact() {
                         <span className="material-symbols-outlined">mail</span>
                       </div>
                       <div>
-                        <span className="font-code-sm text-[10px] text-secondary uppercase tracking-widest block mb-0.5">PROTOCOL: SMTP_DIRECT</span>
-                        <a href={`mailto:${profile.email}`} className="font-mono text-sm text-on-surface hover:text-primary transition-colors hover:underline break-all">
+                        <span className="font-code-sm text-[10px] text-secondary uppercase tracking-widest block mb-0.5">
+                          PROTOCOL: SMTP_DIRECT
+                        </span>
+                        <a
+                          href={`mailto:${profile.email}`}
+                          className="font-mono text-sm text-on-surface hover:text-primary transition-colors hover:underline break-all"
+                        >
                           {profile.email}
                         </a>
                       </div>
                     </div>
-                    <a href={`mailto:${profile.email}`} className="bg-primary-fixed text-on-primary-fixed px-6 py-2.5 font-mono font-bold uppercase tracking-widest text-[10px] hover:glow-cyan-400 active:scale-95 transition-all flex items-center gap-2 cursor-pointer">
+                    <a
+                      href={`mailto:${profile.email}`}
+                      className="bg-primary-fixed text-on-primary-fixed px-6 py-2.5 font-mono font-bold uppercase tracking-widest text-[10px] hover:glow-cyan-400 active:scale-95 transition-all flex items-center gap-2 cursor-pointer"
+                    >
                       <span>OPEN_MAIL</span>
-                      <span className="material-symbols-outlined text-xs">arrow_forward</span>
+                      <span className="material-symbols-outlined text-xs">
+                        arrow_forward
+                      </span>
                     </a>
                   </div>
                 </div>
@@ -111,22 +131,33 @@ export default function Contact() {
                         <span className="material-symbols-outlined">chat</span>
                       </div>
                       <div>
-                        <span className="font-code-sm text-[10px] text-secondary uppercase tracking-widest block mb-0.5">PROTOCOL: LINKEDIN_SECURE</span>
+                        <span className="font-code-sm text-[10px] text-secondary uppercase tracking-widest block mb-0.5">
+                          PROTOCOL: LINKEDIN_SECURE
+                        </span>
                         <span className="font-mono text-sm text-on-surface">
                           Message me on LinkedIn
                         </span>
                       </div>
                     </div>
-                    <a href={profile.linkedinMessageUrl} target="_blank" rel="noopener noreferrer" className="border border-secondary text-secondary px-6 py-2.5 font-mono font-bold uppercase tracking-widest text-[10px] hover:bg-secondary/10 active:scale-95 transition-all flex items-center gap-2 cursor-pointer">
+                    <a
+                      href={profile.linkedinMessageUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="border border-secondary text-secondary px-6 py-2.5 font-mono font-bold uppercase tracking-widest text-[10px] hover:bg-secondary/10 active:scale-95 transition-all flex items-center gap-2 cursor-pointer"
+                    >
                       <span>SEND_MSG</span>
-                      <span className="material-symbols-outlined text-xs">open_in_new</span>
+                      <span className="material-symbols-outlined text-xs">
+                        open_in_new
+                      </span>
                     </a>
                   </div>
                 </div>
 
                 {/* Social Grid (Connect with me) */}
                 <div className="pt-8 border-t border-outline-variant/30">
-                  <span className="font-label-caps text-[10px] text-outline uppercase tracking-[0.2em] block mb-4">Connect with me</span>
+                  <span className="font-label-caps text-[10px] text-outline uppercase tracking-[0.2em] block mb-4">
+                    Connect with me
+                  </span>
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                     {socials.map((social, index) => (
                       <a
@@ -146,11 +177,10 @@ export default function Contact() {
                     ))}
                   </div>
                 </div>
-
               </div>
             </div>
           </div>
-          
+
           {/* Aesthetic Keyboard Image Block */}
           {/* <div className="mt-8 h-48 w-full rounded-xl overflow-hidden grayscale hover:grayscale-0 transition-all duration-700">
             <img
