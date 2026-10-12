@@ -95,8 +95,8 @@ export const profile: Profile = {
   focusAreas: ["Cloud", "Microservices", "UI/UX"],
   statusMessage: "Available for Hire",
   resumeUrl:
-    "https://drive.google.com/file/d/1asCL1ga0m2fY5tBfOsQ9efYpqUt0_tyG/view?usp=sharing",
-  trustedBy: ["Itinges", "MMMR"],
+    "https://drive.google.com/file/d/17oxtg3s9Vxj16084Qm2lAOJNzlLVILku/view?usp=sharing",
+  trustedBy: ["Itinges", "Manakkodam Manu Medical Research"],
   systemHealth: "System_Health: 99.9%_UPTIME",
   email: "dhanush64b@gmail.com",
   linkedinMessageUrl: "https://www.linkedin.com/in/dhanush-kuma/message",
@@ -162,11 +162,41 @@ export const skillCategories: SkillCategory[] = [
 
 export const experiences: ExperienceItem[] = [
   {
+    role: "Freelance Software Engineer",
+    company: "Manakkodam Manu Medical Research",
+    duration: "AUG 2026 — PRESENT",
+    description:
+      "SPECTR: Co-engineered an open-source central trial randomization platform (FastAPI, React, PostgreSQL, Docker) with allocation concealment, stratified sequences via CSV import and in-app generation, and immutable audit trails. Built role-based workflows for central trial coordinators and site investigators—point-of-care kit assignment, onboarding, and exportable history aligned with GCP integrity expectations. Delivered production deployment on Railway; live at spectr.mmmr.in.",
+    skills: [
+      "FastAPI",
+      "React",
+      "PostgreSQL",
+      "Docker",
+      "GCP Compliance",
+      "Clinical Trials",
+    ],
+  },
+  {
+    role: "Contract Software Engineer",
+    company: "Itinges Technologies Pvt Ltd",
+    duration: "APR 2026 — PRESENT",
+    description:
+      "Architected and deployed a dedicated Next.js microservice for high-volume PDF and HTML generation after rendering-driven RAM spikes were crashing the main EC2 server; isolating the workload eliminated those outages. Managed and maintained Linux (Ubuntu EC2) infrastructure, streamlining deployment workflows, build processes, and secure system administration.",
+    skills: [
+      "Next.js",
+      "Linux",
+      "AWS EC2",
+      "Microservices",
+      "Docker",
+      "System Design",
+    ],
+  },
+  {
     role: "Software Developer",
     company: "Itinges Technologies Pvt Ltd",
-    duration: "FEB 2025 — PRESENT",
+    duration: "FEB 2025 — APR 2026",
     description:
-      "Led the migration of critical application storage to Amazon S3, significantly enhancing durability and cost efficiency. Drove core development for a high-impact B2B2C module, designed a suite of robust RESTful APIs, implemented an auditable double-entry accounts module, and built a microservice for output generation while utilizing AI-assisted workflows to accelerate feature delivery.",
+      "Led migration of legacy application storage from AWS instance store to Amazon S3, introducing a decoupled architecture for durability, scalability, and cost efficiency. Designed and implemented a double-entry, fully auditable accounts module; drove core backend development of a high-impact B2B2C module; and designed, built, and shipped a suite of high-performance RESTful APIs.",
     skills: [
       "Next.js",
       "PHP",
@@ -178,15 +208,15 @@ export const experiences: ExperienceItem[] = [
   },
   {
     role: "Freelance",
-    company: "MMMR",
+    company: "Manakkodam Manu Medical Research",
     duration: "NOV 2024 — JAN 2025",
     description:
-      "Designed, developed, and deployed the complete public-facing web platform for MMMR, a premier medical research writing enterprise, establishing their primary digital presence. Engineered a high-performance, responsive user interface with optimized SEO and accessibility, resulting in superior lighthouse scores and user retention. Managed end-to-end cloud hosting, DNS configuration, and deployment pipelines to guarantee 100% system availability.",
+      "Designed, developed, and deployed the complete public-facing web platform for Manakkodam Manu Medical Research, a premier medical research writing enterprise, establishing their primary digital presence. Built a responsive user interface with attention to SEO and accessibility, and managed end-to-end cloud hosting, DNS configuration, and deployments.",
     skills: ["HTML", "CSS", "JavaScript", "SEO", "Cloud Hosting"],
   },
   {
-    role: "AI Engineer",
-    company: "HeadStarter",
+    role: "AI Engineer Fellow",
+    company: "HeadStarter AI",
     duration: "JUL 2024 — AUG 2024",
     description:
       "Participated in a fast-paced Software Engineering Fellowship, collaborating with international developers to architect and build innovative full-stack and AI-driven projects. Engineered multiple scalable web applications using modern web technologies, implemented advanced AI integrations, and practiced agile methodologies with global engineering teams.",
@@ -210,6 +240,34 @@ export const projects: Project[] = [
       {
         label: "Github",
         url: "https://github.com/dhanush-kuma/wallet-service",
+      },
+    ],
+  },
+  {
+    title: "SPECTR",
+    tag: "web / clinical-research",
+    description:
+      "Built for Manakkodam Manu Medical Research—open-source, GCP-aligned central randomization for multicenter trials: stratified block sequences (CSV import or in-app), allocation concealment, role-based access for coordinators and site investigators, audit trails, and point-of-care kit assignment—without enterprise IWRS overhead.",
+    tech: [
+      "FastAPI",
+      "React",
+      "Vite",
+      "PostgreSQL",
+      "Docker",
+      "Railway",
+    ],
+    image: "",
+    imageAlt:
+      "Clinical trial randomization dashboard with study arms, stratum filters, and allocation audit logs in a clean medical research interface.",
+    links: [
+      {
+        label: "Live",
+        url: "https://spectr.mmmr.in",
+        icon: "open_in_new",
+      },
+      {
+        label: "Github",
+        url: "https://github.com/dhanush-kuma/SPECTR",
       },
     ],
   },
