@@ -14,11 +14,14 @@ export interface Profile {
   linkedinMessageUrl: string;
 }
 
+export interface TerminalStat {
+  label: string;
+  value: string;
+}
+
 export interface TerminalMetrics {
-  uptime: string;
-  latency: string;
-  nodes: string;
-  errors: number | string;
+  command: string;
+  stats: TerminalStat[];
   cursorCommand: string;
   sshTarget: string;
 }
@@ -103,11 +106,13 @@ export const profile: Profile = {
 };
 
 export const terminalMetrics: TerminalMetrics = {
-  sshTarget: "ssh developer@arch-v4.remote",
-  uptime: "99.998%",
-  latency: "12ms",
-  nodes: "124 Active",
-  errors: "0",
+  sshTarget: "dhanush@portfolio: ~",
+  command: "whoami --stats",
+  stats: [
+    { label: "Shipping since", value: "2025" },
+    { label: "Stack", value: "Go · Python · TS" },
+    { label: "Based in", value: "Kochi, KL" },
+  ],
   cursorCommand: "initializing_architecture",
 };
 

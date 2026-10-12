@@ -142,21 +142,14 @@ export default function Home() {
                   </div>
                   <div className="text-secondary opacity-80">
                     ➜ <span className="text-primary ml-2">~</span>{" "}
-                    <span className="text-on-surface">system-check --full</span>
+                    <span className="text-on-surface">{terminalMetrics.command}</span>
                   </div>
                   <div className="grid grid-cols-2 gap-4 text-[11px] py-2 border-y border-outline-variant/20">
-                    <div className="text-on-surface-variant">
-                      Uptime: <span className="text-secondary">{terminalMetrics.uptime}</span>
-                    </div>
-                    <div className="text-on-surface-variant">
-                      Latency: <span className="text-secondary">{terminalMetrics.latency}</span>
-                    </div>
-                    <div className="text-on-surface-variant">
-                      Nodes: <span className="text-secondary">{terminalMetrics.nodes}</span>
-                    </div>
-                    <div className="text-on-surface-variant">
-                      Errors: <span className={typeof terminalMetrics.errors === 'number' || terminalMetrics.errors === '0' ? "text-green-400" : "text-red-400"}>{terminalMetrics.errors}</span>
-                    </div>
+                    {terminalMetrics.stats.map((stat) => (
+                      <div key={stat.label} className="text-on-surface-variant">
+                        {stat.label}: <span className="text-secondary">{stat.value}</span>
+                      </div>
+                    ))}
                   </div>
                   <div className="text-secondary opacity-80">
                     ➜ <span className="text-primary ml-2">~</span>{" "}
